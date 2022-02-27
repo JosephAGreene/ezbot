@@ -1,5 +1,5 @@
 import axios from "axios";
-import API from "./apiURI.js";
+import API from "../utils/apiURI.js";
 
 class AnnouncementService {
 

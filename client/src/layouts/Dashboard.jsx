@@ -28,7 +28,7 @@ import MinDialog from '../components/dialogs/MinDialog';
 import Navigator from '../views/Navigator';
 import Header from '../views/Header';
 
-import routes from "../routes";
+import routes from "../utils/routes";
 
 const drawerWidth = 256;
 

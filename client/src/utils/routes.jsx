@@ -9,31 +9,31 @@ import { ImBullhorn } from "react-icons/im";
 import GavelIcon from '@material-ui/icons/Gavel';
 
 // Import Components
-import Stash from "./views/Stash";
+import Stash from "../views/Stash";
 //import Content from "./views/Content.js";
-import NewBot from "./views/NewBot";
-import Settings from "./views/settings/Settings";
-import Invite from "./views/settings/Invite";
-import Modules from "./views/Modules";
-import CustomCommands from './views/modules/CustomCommands';
-import CustomCommandSingle from './views/modules/CustomCommandSingle';
-import CustomCommandOptioned from './views/modules/CustomCommandOptioned';
-import CustomCommandRandom from './views/modules/CustomCommandRandom';
-import Moderation from './views/modules/Moderation';
-import ModerationHelp from './views/modules/ModerationHelp';
-import ModerationBan from './views/modules/ModerationBan';
-import ModerationSoftBan from './views/modules/ModerationSoftBan';
-import ModerationKick from './views/modules/ModerationKick';
-import ModerationPing from './views/modules/ModerationPing';
-import ModerationPurge from './views/modules/ModerationPurge';
-import AutoModeration from './views/modules/AutoModeration';
-import AutoModAutoRoles from './views/modules/AutoModAutoRoles';
-import AutoModBannedWords from './views/modules/AutoModBannedWords';
-import AutoModInviteLinks from './views/modules/AutoModInviteLinks';
-import AutoModMassCaps from './views/modules/AutoModMassCaps';
-import AutoModMassMentions from './views/modules/AutoModMassMentions';
-import Announcements from './views/modules/Announcements';
-import GettingStarted from './views/documents/GettingStarted';
+import NewBot from "../views/NewBot";
+import Settings from "../views/settings/Settings";
+import Invite from "../views/settings/Invite";
+import Modules from "../views/Modules";
+import CustomCommands from '../views/modules/CustomCommands';
+import CustomCommandSingle from '../views/modules/CustomCommandSingle';
+import CustomCommandOptioned from '../views/modules/CustomCommandOptioned';
+import CustomCommandRandom from '../views/modules/CustomCommandRandom';
+import Moderation from '../views/modules/Moderation';
+import ModerationHelp from '../views/modules/ModerationHelp';
+import ModerationBan from '../views/modules/ModerationBan';
+import ModerationSoftBan from '../views/modules/ModerationSoftBan';
+import ModerationKick from '../views/modules/ModerationKick';
+import ModerationPing from '../views/modules/ModerationPing';
+import ModerationPurge from '../views/modules/ModerationPurge';
+import AutoModeration from '../views/modules/AutoModeration';
+import AutoModAutoRoles from '../views/modules/AutoModAutoRoles';
+import AutoModBannedWords from '../views/modules/AutoModBannedWords';
+import AutoModInviteLinks from '../views/modules/AutoModInviteLinks';
+import AutoModMassCaps from '../views/modules/AutoModMassCaps';
+import AutoModMassMentions from '../views/modules/AutoModMassMentions';
+import Announcements from '../views/modules/Announcements';
+import GettingStarted from '../views/documents/GettingStarted';
 
 const routes = [
   {

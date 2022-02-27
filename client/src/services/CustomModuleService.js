@@ -1,5 +1,5 @@
 import axios from "axios";
-import API from "./apiURI";
+import API from "../utils/apiURI";
 
 class CustomModuleService {
 
