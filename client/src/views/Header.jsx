@@ -16,40 +16,19 @@ import Headline from '../components/Headline';
 import { AiOutlineRobot } from 'react-icons/ai';
 import MenuIcon from '@material-ui/icons/Menu';
 
-const lightColor = 'rgba(255, 255, 255, 0.7)';
-
 const styles = (theme) => ({
   bar: {
     backgroundColor: theme.palette.gray.main,
     boxShadow: '0px 1px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 4px 5px 0px rgba(0,0,0,0.12)',
   },
-  secondaryBar: {
-    zIndex: 0,
-  },
   menuButton: {
     marginLeft: -theme.spacing(1),
-  },
-  iconButtonAvatar: {
-    padding: 4,
-    color: theme.palette.orange.main,
   },
   spacer: {
     width: "10px",
   },
   psuedoBurger: {
     width: "250px",
-  },
-  link: {
-    textDecoration: 'none',
-    color: lightColor,
-    '&:hover': {
-      color: theme.palette.common.white,
-    },
-  },
-  menuPaper: {
-    backgroundColor: theme.palette.gray.dark,
-    border: `1px solid ${theme.palette.gray.light}`,
-    borderRadius: 0,
   },
 });
 
@@ -60,7 +39,7 @@ function Header(props) {
     <React.Fragment>
       <AppBar
         component="div"
-        className={(classes.secondaryBar, classes.bar)}
+        className={classes.bar}
         color="primary"
         position="fixed"
         elevation={0}
