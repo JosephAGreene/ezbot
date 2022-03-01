@@ -3,24 +3,24 @@ import { Link, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 // Import API service
-import BotService from "../services/BotService.js";
+import BotService from "../../services/BotService.js";
 
 // Import layouts
-import ContentWrapper from '../layouts/ContentWrapper';
+import ContentWrapper from '../../layouts/ContentWrapper';
 
 // Import Mui components
 import { withStyles } from '@material-ui/core/styles';
 
 // Import custom components
-import GridContainer from '../components/grid/GridContainer';
-import GridItem from '../components/grid/GridItem';
-import TitlePanel from './panels/TitlePanel';
-import BotPanel from './panels/BotPanel';
-import CircularBackdrop from '../components/progress/CircularBackdrop';
-import Button from '../components/buttons/Button';
+import GridContainer from '../../components/grid/GridContainer';
+import GridItem from '../../components/grid/GridItem';
+import TitlePanel from '../panels/TitlePanel';
+import BotPanel from '../panels/BotPanel';
+import CircularBackdrop from '../../components/progress/CircularBackdrop';
+import Button from '../../components/buttons/Button';
 
 // Import images
-import stashImage from '../assets/images/stash.png';
+import stashImage from '../../assets/images/stash.png';
 
 const styles = (theme) => ({
   empty: {

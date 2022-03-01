@@ -7,26 +7,26 @@ import { joiResolver } from '@hookform/resolvers/joi';
 import Joi from 'joi';
 
 // Import API service
-import BotService from "../services/BotService.js";
+import BotService from "../../services/BotService.js";
 
 // Import MUI components
 import { withStyles } from '@material-ui/core/styles';
 import InputAdornment from '@material-ui/core/InputAdornment';
 
 // Import custom components
-import TitlePanel from './panels/TitlePanel';
-import ContentPanel from './panels/ContentPanel';
-import OutlinedInput from '../components/inputs/OutlinedInputDark';
-import ControlledCheckbox from '../components/inputs/ControlledCheckbox';
-import Button from '../components/buttons/Button';
-import GridContainer from '../components/grid/GridContainer';
-import GridItem from '../components/grid/GridItem';
+import TitlePanel from '../panels/TitlePanel';
+import ContentPanel from '../panels/ContentPanel';
+import OutlinedInput from '../../components/inputs/OutlinedInputDark';
+import ControlledCheckbox from '../../components/inputs/ControlledCheckbox';
+import Button from '../../components/buttons/Button';
+import GridContainer from '../../components/grid/GridContainer';
+import GridItem from '../../components/grid/GridItem';
 
 // Import layouts
-import ContentWrapper from '../layouts/ContentWrapper';
+import ContentWrapper from '../../layouts/ContentWrapper';
 
 // Import images
-import newBotImage from '../assets/images/newbot.png';
+import newBotImage from '../../assets/images/newbot.png';
 
 // Import icons
 import VisibilityIcon from '@material-ui/icons/Visibility';

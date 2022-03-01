@@ -10,7 +10,7 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import {theme} from './jss/theme';
 import Home from './Home';
-import Dashboard from './layouts/Dashboard';
+import Dashboard from './views/dashboard/Dashboard';
 
 ReactDOM.render(
   <React.StrictMode>

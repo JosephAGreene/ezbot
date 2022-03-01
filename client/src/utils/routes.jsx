@@ -9,12 +9,11 @@ import { ImBullhorn } from "react-icons/im";
 import GavelIcon from '@material-ui/icons/Gavel';
 
 // Import Components
-import Stash from "../views/Stash";
-//import Content from "./views/Content.js";
-import NewBot from "../views/NewBot";
+import Stash from "../views/dashboard/Stash";
+import NewBot from "../views/dashboard/NewBot";
 import Settings from "../views/settings/Settings";
 import Invite from "../views/settings/Invite";
-import Modules from "../views/Modules";
+import Modules from "../views/modules/Modules";
 import CustomCommands from '../views/modules/CustomCommands';
 import CustomCommandSingle from '../views/modules/CustomCommandSingle';
 import CustomCommandOptioned from '../views/modules/CustomCommandOptioned';

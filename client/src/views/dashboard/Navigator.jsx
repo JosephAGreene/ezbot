@@ -15,7 +15,7 @@ import { ListItemAvatar } from '@material-ui/core';
 import Avatar from '@material-ui/core/Avatar';
 
 // Import custom components
-import Headline from '../components/Headline';
+import Title from '../../components/appbar/Title';
 import AvatarFooter from './AvatarFooter';
 
 // Import icons
@@ -24,7 +24,7 @@ import { FaWarehouse } from 'react-icons/fa';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 // Impot default discord avatar image
-import defaultDiscord from '../assets/images/defaultDiscord.png';
+import defaultDiscord from '../../assets/images/defaultDiscord.png';
 
 const styles = (theme) => ({
   categoryHeader: {
@@ -105,13 +105,13 @@ function Navigator(props) {
       <List disablePadding>
         <ListItem className={clsx(classes.firebase, classes.psuedoItem, classes.itemCategory)}>
           {(!isEmptyObject(selectedBot) && activeSubDirectory === 'develop') 
-            ? <Headline 
+            ? <Title 
                 iconComponent={GoBeaker}
                 start="The"
                 end="Lab"
                 color="#edc374"
               />
-            : <Headline 
+            : <Title 
                 iconComponent={FaWarehouse}
                 start="The"
                 end="Stash"

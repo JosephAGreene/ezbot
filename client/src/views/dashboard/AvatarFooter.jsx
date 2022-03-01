@@ -6,8 +6,8 @@ import { withStyles } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
 
 // Import custom components
-import GridContainer from '../components/grid/GridContainer';
-import GridItem from '../components/grid/GridItem';
+import GridContainer from '../../components/grid/GridContainer';
+import GridItem from '../../components/grid/GridItem';
 
 // Import Icons
 import {RiLogoutBoxRLine} from 'react-icons/ri';

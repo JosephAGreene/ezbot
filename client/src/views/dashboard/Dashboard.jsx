@@ -9,7 +9,7 @@ import {
 import PropTypes from 'prop-types';
 
 // Import API service
-import AuthService from "../services/AuthService.js";
+import AuthService from "../../services/AuthService.js";
 
 // Import MUI components
 import { withStyles } from '@material-ui/core/styles';
@@ -19,16 +19,16 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
 // Import custom components
-import Alert from '../components/alerts/alert';
-import Button from '../components/buttons/Button';
-import CircularBackdrop from '../components/progress/CircularBackdrop';
-import MinDialog from '../components/dialogs/MinDialog';
+import Alert from '../../components/alerts/alert';
+import Button from '../../components/buttons/Button';
+import CircularBackdrop from '../../components/progress/CircularBackdrop';
+import MinDialog from '../../components/dialogs/MinDialog';
 
 // Import Views
-import Navigator from '../views/Navigator';
-import Header from '../views/Header';
+import Navigator from './Navigator';
+import Header from './Header';
 
-import routes from "../utils/routes";
+import routes from "../../utils/routes";
 
 const drawerWidth = 256;
 
