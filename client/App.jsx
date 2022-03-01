@@ -1,0 +1,31 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route, 
+  Redirect
+} from 'react-router-dom';
+import { ThemeProvider } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import {theme} from './src/jss/theme';
+import Landing from './src/views/landing/Landing';
+import Dashboard from './src/views/dashboard/Dashboard';
+
+ReactDOM.render(
+  <React.StrictMode>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Redirect to="/home" />
+          </Route>
+          <Route path="/home" component={Landing} />
+          <Route path="/dashboard" component={Dashboard} />
+        </Switch>
+      </Router>
+    </ThemeProvider>
+  </React.StrictMode>,
+  document.getElementById('root')
+);

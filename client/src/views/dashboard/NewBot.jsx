@@ -14,6 +14,7 @@ import { withStyles } from '@material-ui/core/styles';
 import InputAdornment from '@material-ui/core/InputAdornment';
 
 // Import custom components
+import ContentWrapper from '../ContentWrapper';
 import TitlePanel from '../panels/TitlePanel';
 import ContentPanel from '../panels/ContentPanel';
 import OutlinedInput from '../../components/inputs/OutlinedInputDark';
@@ -21,9 +22,6 @@ import ControlledCheckbox from '../../components/inputs/ControlledCheckbox';
 import Button from '../../components/buttons/Button';
 import GridContainer from '../../components/grid/GridContainer';
 import GridItem from '../../components/grid/GridItem';
-
-// Import layouts
-import ContentWrapper from '../../layouts/ContentWrapper';
 
 // Import images
 import newBotImage from '../../assets/images/newbot.png';

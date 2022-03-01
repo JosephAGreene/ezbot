@@ -1,8 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import clsx from 'clsx';
+import API from "../../utils/apiURI.js";
+
+// Import MUI components
 import { withStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+
+// Import custom components
+import Button from '../../components/buttons/Button';
+import Typography from '../../components/Typography';
 
 const styles = (theme) => ({
   root: {
@@ -42,27 +48,57 @@ const styles = (theme) => ({
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     zIndex: -2,
+    backgroundColor: '#7fc7d9',
+    backgroundPosition: 'center',
+  },
+  button: {
+    minWidth: 200,
+  },
+  h5: {
+    marginBottom: theme.spacing(4),
+    marginTop: theme.spacing(1),
+    [theme.breakpoints.up('sm')]: {
+      marginTop: theme.spacing(10),
+    },
+  },
+  more: {
+    marginTop: theme.spacing(2),
   },
 });
 
-function MainLandingLayout(props) {
-  const { backgroundClassName, children, classes } = props;
+function Splash(props) {
+  const { classes } = props;
+
+  const login = () => window.location.href = `${API}/auth/discord`;
 
   return (
+    <>
+
     <section className={classes.root}>
       <Container className={classes.container}>
-        {children}
+        <Button
+          color="purple"
+          variant="contained"
+          size="lg"
+          className={classes.button}
+          component="a"
+          onClick={login}
+        >
+          Login With Discord
+        </Button>
+        <Typography variant="body2" color="inherit" className={classes.more}>
+          Build your own bot
+        </Typography>
         <div className={classes.backdrop} />
-        <div className={clsx(classes.background, backgroundClassName)} />
+        <div className={classes.background} />
       </Container>
     </section>
+    </>
   );
 }
 
-MainLandingLayout.propTypes = {
-  backgroundClassName: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
+Splash.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(MainLandingLayout);
+export default withStyles(styles)(Splash);
