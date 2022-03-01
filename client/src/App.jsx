@@ -8,9 +8,9 @@ import {
 } from 'react-router-dom';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import {theme} from './src/jss/theme';
-import Landing from './src/views/landing/Landing';
-import Dashboard from './src/views/dashboard/Dashboard';
+import {theme} from './jss/theme';
+import Landing from './views/landing/Landing';
+import Dashboard from './views/dashboard/Dashboard';
 
 ReactDOM.render(
   <React.StrictMode>
