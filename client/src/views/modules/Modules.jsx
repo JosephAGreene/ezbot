@@ -1,9 +1,7 @@
 import React from 'react';
 
-// Import layouts
-import ContentWrapper from '../../layouts/ContentWrapper';
-
 // Import custom components
+import ContentWrapper from '../ContentWrapper';
 import GridContainer from '../../components/grid/GridContainer';
 import ModulePanel from '../panels/ModulePanel';
 

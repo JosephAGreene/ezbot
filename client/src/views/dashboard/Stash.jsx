@@ -5,13 +5,11 @@ import PropTypes from 'prop-types';
 // Import API service
 import BotService from "../../services/BotService.js";
 
-// Import layouts
-import ContentWrapper from '../../layouts/ContentWrapper';
-
 // Import Mui components
 import { withStyles } from '@material-ui/core/styles';
 
 // Import custom components
+import ContentWrapper from '../ContentWrapper';
 import GridContainer from '../../components/grid/GridContainer';
 import GridItem from '../../components/grid/GridItem';
 import TitlePanel from '../panels/TitlePanel';

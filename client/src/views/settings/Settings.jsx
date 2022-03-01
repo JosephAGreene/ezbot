@@ -9,15 +9,13 @@ import Joi from 'joi';
 // Import API service
 import BotService from "../../services/BotService.js";
 
-// Import layouts
-import ContentWrapper from '../../layouts/ContentWrapper';
-
 // Import MUI components
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import InputAdornment from '@material-ui/core/InputAdornment';
 
 // Import custom components
+import ContentWrapper from '../ContentWrapper';
 import TitlePanel from '../panels/TitlePanel';
 import GridContainer from '../../components/grid/GridContainer';
 import GridItem from '../../components/grid/GridItem';

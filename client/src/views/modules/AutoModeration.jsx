@@ -1,15 +1,13 @@
 import React from 'react';
 import PropTypes from "prop-types";
 
-// Import layouts
-import ContentWrapper from '../../layouts/ContentWrapper';
-
 // Import custom components
+import ContentWrapper from '../ContentWrapper';
 import TitlePanel from '../panels/TitlePanel';
 import ModerationPanel from '../panels/ModerationPanel';
 import GridContainer from '../../components/grid/GridContainer';
 
-// Temporary flat image/icon for testing
+// Import images
 import autoroleImage from '../../assets/images/autorole.png';
 import automoderatorImage from '../../assets/images/automoderator.png';
 import bannedwordsImage from '../../assets/images/bannedwords.png';

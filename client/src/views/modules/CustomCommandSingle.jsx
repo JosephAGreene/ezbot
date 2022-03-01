@@ -10,10 +10,8 @@ import { useForm, useFieldArray, useWatch } from 'react-hook-form';
 import { joiResolver } from '@hookform/resolvers/joi';
 import Joi from 'joi';
 
-// Import layouts
-import ContentWrapper from '../../layouts/ContentWrapper';
-
 // Import custom components
+import ContentWrapper from '../ContentWrapper';
 import TitlePanel from '../panels/TitlePanel';
 import ContentPanel from '../panels/ContentPanel';
 import ErrorText from '../../components/info/ErrorText.jsx';

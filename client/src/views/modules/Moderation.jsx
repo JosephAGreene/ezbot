@@ -1,10 +1,8 @@
 import React from 'react';
 import PropTypes from "prop-types";
 
-// Import layouts
-import ContentWrapper from '../../layouts/ContentWrapper';
-
 // Import custom components
+import ContentWrapper from '../ContentWrapper';
 import TitlePanel from '../panels/TitlePanel';
 import ModerationPanel from '../panels/ModerationPanel';
 import GridContainer from '../../components/grid/GridContainer';

@@ -7,10 +7,8 @@ import Hidden from '@material-ui/core/Hidden';
 import Avatar from '@material-ui/core/Avatar';
 import Paper from '@material-ui/core/Paper';
 
-// Import custom layouts
-import ContentWrapper from '../../layouts/ContentWrapper';
-
 // Import custom components
+import ContentWrapper from '../ContentWrapper';
 import ContentPanel from '../panels/ContentPanel';
 import TitlePanel from '../panels/TitlePanel';
 import GridContainer from '../../components/grid/GridContainer';

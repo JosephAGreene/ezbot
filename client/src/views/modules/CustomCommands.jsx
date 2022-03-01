@@ -1,9 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
 
-// Import layouts
-import ContentWrapper from '../../layouts/ContentWrapper';
-
 // Import MUI components
 import { withStyles } from '@material-ui/core/styles';
 import Pagination from '@material-ui/lab/Pagination';
@@ -11,6 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Hidden from '@material-ui/core/Hidden';
 
 // Import custom components
+import ContentWrapper from '../ContentWrapper';
 import TitlePanel from '../panels/TitlePanel';
 import ModulePanel from '../panels/ModulePanel';
 import AssignedCommandPanel from '../panels/AssignedCommandPanel';
