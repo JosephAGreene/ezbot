@@ -11,6 +11,7 @@ import { withStyles } from '@material-ui/core/styles';
 import FormHelperText from '@material-ui/core/FormHelperText';
 
 // Import custom components
+import ErrorText from '../../components/info/ErrorText.jsx';
 import OutlinedInput from '../../../components/inputs/OutlinedInputDark';
 import ResponseEditor from '../../../components/inputs/ResponseEditor';
 import Button from '../../../components/buttons/Button';
@@ -434,12 +435,10 @@ function AddOptionDialog(props) {
           />
         </ControlledRadioGroup>
         {returnResponseEditor()}
-        {errors.maxChar
-          ? <FormHelperText className={classes.labelRootError} id={`error-message-maxChar`}>
-            The combined character count of embed title, description, fields, and footer cannot exceed 5,500!
-          </FormHelperText>
-          : <FormHelperText> </FormHelperText>
-        }
+        <ErrorText
+          error={errors.maxChar}
+          text="The combined character count of embed title, description, fields, and footer cannot exceed 5,500!"
+        />
         <GridContainer justifyContent="flex-end">
           <GridItem>
             <Button
