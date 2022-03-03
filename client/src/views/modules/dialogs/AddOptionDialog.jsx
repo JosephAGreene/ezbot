@@ -8,10 +8,9 @@ import Joi from 'joi';
 
 // Import Mui components
 import { withStyles } from '@material-ui/core/styles';
-import FormHelperText from '@material-ui/core/FormHelperText';
 
 // Import custom components
-import ErrorText from '../../components/info/ErrorText.jsx';
+import ErrorText from '../../../components/info/ErrorText.jsx';
 import OutlinedInput from '../../../components/inputs/OutlinedInputDark';
 import ResponseEditor from '../../../components/inputs/ResponseEditor';
 import Button from '../../../components/buttons/Button';
@@ -33,11 +32,6 @@ const styles = (theme) => ({
   },
   edit: {
     color: theme.palette.purple.main,
-  },
-  labelRootError: {
-    width: "100%",
-    textAlign: "right",
-    color: theme.palette.error.main
   },
 });
 
