@@ -6,11 +6,9 @@ import { useForm, useFieldArray, useWatch } from 'react-hook-form';
 import { joiResolver } from '@hookform/resolvers/joi';
 import Joi from 'joi';
 
-// Import Mui components
-import { withStyles } from '@material-ui/core/styles';
-
 // Import custom components
-import ErrorText from '../../../components/info/ErrorText.jsx';
+import ContentPanelMin from '../../panels/ContentPanelMin';
+import ErrorText from '../../../components/info/ErrorText';
 import OutlinedInput from '../../../components/inputs/OutlinedInputDark';
 import ResponseEditor from '../../../components/inputs/ResponseEditor';
 import Button from '../../../components/buttons/Button';
@@ -20,20 +18,6 @@ import ResponsiveDialog from '../../../components/dialogs/ResponsiveDialog';
 import EmbedEditor from '../editors/EmbedEditor';
 import ControlledRadioGroup from '../../../components/inputs/ControlledRadioGroup';
 import ControlledRadio from '../../../components/inputs/ControlledRadio';
-
-const styles = (theme) => ({
-  categoryHeader: {
-    marginBottom: theme.spacing(2),
-    color: theme.palette.white.dark,
-    fontSize: 24,
-  },
-  new: {
-    color: theme.palette.green.main,
-  },
-  edit: {
-    color: theme.palette.purple.main,
-  },
-});
 
 const addOptionSchema = Joi.object({
   keyword: Joi.string().trim().max(30).required()
@@ -235,9 +219,8 @@ function setOptionDefaultValues(option) {
   }
 }
 
-function AddOptionDialog(props) {
+export default function AddOptionDialog(props) {
   const {
-    classes,
     optionsArray,
     setOptionsArray,
     optionDialog,
@@ -399,67 +382,68 @@ function AddOptionDialog(props) {
       open={optionDialog}
       keepMounted={false}
     >
-      <div className={classes.categoryHeader}>
-        {editOption ? <span className={classes.edit}>Edit</span> : <span className={classes.new}>New</span>}  Optioned Response
-      </div>
-      <form autoComplete="off" onSubmit={handleSubmit(onSubmit)} >
-        <OutlinedInput
-          labelText="Option Keyword"
-          description="Supplied Option Keyword"
-          id="keyword"
-          name="keyword"
-          formControlProps={{ fullWidth: true }}
-          inputProps={{ ...register("keyword"), maxLength: 30 }}
-          error={errors}
-        />
-        <ControlledRadioGroup
-          control={control}
-          name="responseType"
-          description="Response Type"
-          defaultValue="basic"
-          error={errors}
-        >
-          <ControlledRadio
-            value="basic"
-            label="Basic"
+      <ContentPanelMin
+        headerPhase={editOption ? "Edit" : "New"}
+        header={'Optioned Response'}
+      >
+        <form autoComplete="off" onSubmit={handleSubmit(onSubmit)} >
+          <OutlinedInput
+            labelText="Option Keyword"
+            description="Supplied Option Keyword"
+            id="keyword"
+            name="keyword"
+            formControlProps={{ fullWidth: true }}
+            inputProps={{ ...register("keyword"), maxLength: 30 }}
+            error={errors}
           />
-          <ControlledRadio
-            value="embed"
-            label="Embed"
+          <ControlledRadioGroup
+            control={control}
+            name="responseType"
+            description="Response Type"
+            defaultValue="basic"
+            error={errors}
+          >
+            <ControlledRadio
+              value="basic"
+              label="Basic"
+            />
+            <ControlledRadio
+              value="embed"
+              label="Embed"
+            />
+          </ControlledRadioGroup>
+          {returnResponseEditor()}
+          <ErrorText
+            error={errors.maxChar}
+            text="The combined character count of embed title, description, fields, and footer cannot exceed 5,500!"
           />
-        </ControlledRadioGroup>
-        {returnResponseEditor()}
-        <ErrorText
-          error={errors.maxChar}
-          text="The combined character count of embed title, description, fields, and footer cannot exceed 5,500!"
-        />
-        <GridContainer justifyContent="flex-end">
-          <GridItem>
-            <Button
-              onClick={() => closeOptionedDialog(reset)}
-              variant="contained"
-              color="danger"
-            >
-              Cancel
-            </Button>
-          </GridItem>
-          <GridItem>
-            <Button
-              type="submit"
-              variant="contained"
-              color="orange"
-            >
-              {editOption ? "Update" : "Add"}
-            </Button>
-          </GridItem>
-        </GridContainer>
-      </form>
+          <GridContainer justifyContent="flex-end">
+            <GridItem>
+              <Button
+                onClick={() => closeOptionedDialog(reset)}
+                variant="contained"
+                color="danger"
+              >
+                Cancel
+              </Button>
+            </GridItem>
+            <GridItem>
+              <Button
+                type="submit"
+                variant="contained"
+                color="orange"
+              >
+                {editOption ? "Update" : "Add"}
+              </Button>
+            </GridItem>
+          </GridContainer>
+        </form>
+      </ContentPanelMin>
     </ResponsiveDialog>
   );
 }
 
 AddOptionDialog.propTypes = {
-  classes: PropTypes.object.isRequired,
   optionsArray: PropTypes.array.isRequired,
   setOptionsArray: PropTypes.func.isRequired,
   optionDialog: PropTypes.bool.isRequired,
@@ -469,5 +453,3 @@ AddOptionDialog.propTypes = {
   ]),
   closeOptionedDialog: PropTypes.func.isRequired,
 };
-
-export default withStyles(styles)(AddOptionDialog);
