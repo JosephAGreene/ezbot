@@ -10,6 +10,7 @@ import Joi from 'joi';
 import { withStyles } from '@material-ui/core/styles';
 
 // Import custom components
+import ContentPanelMin from '../../panels/ContentPanelMin';
 import ErrorText from '../../../components/info/ErrorText';
 import Button from '../../../components/buttons/Button';
 import GridContainer from '../../../components/grid/GridContainer';
@@ -19,20 +20,6 @@ import ResponseEditor from '../../../components/inputs/ResponseEditor';
 import EmbedEditor from '../editors/EmbedEditor';
 import ControlledRadioGroup from '../../../components/inputs/ControlledRadioGroup';
 import ControlledRadio from '../../../components/inputs/ControlledRadio';
-
-const styles = (theme) => ({
-  categoryHeader: {
-    marginBottom: theme.spacing(2),
-    color: theme.palette.white.dark,
-    fontSize: 24,
-  },
-  new: {
-    color: theme.palette.green.main,
-  },
-  edit: {
-    color: theme.palette.purple.main,
-  }
-});
 
 const addResponseSchema = Joi.object({
   responseType: Joi.string().trim().required()
@@ -208,9 +195,8 @@ function setResponseDefaultValues(response) {
   }
 }
 
-function AddResponseDialog(props) {
+export default function AddResponseDialog(props) {
   const {
-    classes,
     responsesArray,
     setResponsesArray,
     responseDialog,
@@ -361,58 +347,59 @@ function AddResponseDialog(props) {
       open={responseDialog}
       keepMounted={true}
     >
-      <div className={classes.categoryHeader}>
-        {editResponse ? <span className={classes.edit}>Edit</span> : <span className={classes.new}>New</span>}  Potential Response
-      </div>
-      <form autoComplete="off" onSubmit={handleSubmit(onSubmit)} >
-        <ControlledRadioGroup
-          control={control}
-          name="responseType"
-          description="Response Type"
-          defaultValue="basic"
-          error={errors}
-        >
-          <ControlledRadio
-            value="basic"
-            label="Basic"
+      <ContentPanelMin
+        headerPhase={editResponse ? "Edit" : "New"}
+        header={'Potential Response'}
+      >
+        <form autoComplete="off" onSubmit={handleSubmit(onSubmit)} >
+          <ControlledRadioGroup
+            control={control}
+            name="responseType"
+            description="Response Type"
+            defaultValue="basic"
+            error={errors}
+          >
+            <ControlledRadio
+              value="basic"
+              label="Basic"
+            />
+            <ControlledRadio
+              value="embed"
+              label="Embed"
+            />
+          </ControlledRadioGroup>
+          {returnResponseEditor()}
+          <ErrorText
+            error={errors.maxChar}
+            text="The combined character count of embed title, description, fields, and footer cannot exceed 5,500!"
           />
-          <ControlledRadio
-            value="embed"
-            label="Embed"
-          />
-        </ControlledRadioGroup>
-        {returnResponseEditor()}
-        <ErrorText
-          error={errors.maxChar}
-          text="The combined character count of embed title, description, fields, and footer cannot exceed 5,500!"
-        />
-        <GridContainer justifyContent="flex-end">
-          <GridItem>
-            <Button
-              onClick={closeResponseDialog}
-              variant="contained"
-              color="danger"
-            >
-              Cancel
-            </Button>
-          </GridItem>
-          <GridItem>
-            <Button
-              type="submit"
-              variant="contained"
-              color="orange"
-            >
-              {editResponse ? "Update" : "Add"}
-            </Button>
-          </GridItem>
-        </GridContainer>
-      </form>
+          <GridContainer justifyContent="flex-end">
+            <GridItem>
+              <Button
+                onClick={closeResponseDialog}
+                variant="contained"
+                color="danger"
+              >
+                Cancel
+              </Button>
+            </GridItem>
+            <GridItem>
+              <Button
+                type="submit"
+                variant="contained"
+                color="orange"
+              >
+                {editResponse ? "Update" : "Add"}
+              </Button>
+            </GridItem>
+          </GridContainer>
+        </form>
+      </ContentPanelMin>
     </ResponsiveDialog>
   );
 }
 
 AddResponseDialog.propTypes = {
-  classes: PropTypes.object.isRequired,
   responsesArray: PropTypes.array.isRequired,
   setResponsesArray: PropTypes.func.isRequired,
   responseDialog: PropTypes.bool.isRequired,
@@ -422,5 +409,3 @@ AddResponseDialog.propTypes = {
   ]),
   closeResponseDialog: PropTypes.func.isRequired,
 };
-
-export default withStyles(styles)(AddResponseDialog);
