@@ -13,6 +13,7 @@ import Joi from 'joi';
 import { withStyles } from '@material-ui/core/styles';
 
 // Import custom components
+import ContentPanelMin from '../../panels/ContentPanelMin.jsx';
 import ErrorText from '../../../components/info/ErrorText.jsx';
 import ResponsiveDialog from '../../../components/dialogs/ResponsiveDialog';
 import GridContainer from '../../../components/grid/GridContainer';
@@ -24,26 +25,6 @@ import ControlledRadioGroup from '../../../components/inputs/ControlledRadioGrou
 import ControlledRadio from '../../../components/inputs/ControlledRadio';
 import ChannelSelect from '../../../components/inputs/ChannelSelect';
 import ControlledSelect from '../../../components/inputs/ControlledSelect.jsx';
-
-const styles = (theme) => ({
-  categoryHeader: {
-    marginBottom: theme.spacing(2),
-    color: theme.palette.white.dark,
-    fontSize: 24,
-  },
-  new: {
-    color: theme.palette.green.main,
-  },
-  edit: {
-    color: theme.palette.purple.main,
-  },
-  largeSpacer: {
-    marginTop: theme.spacing(6),
-  },
-  smallSpacer: {
-    marginTop: theme.spacing(2),
-  },
-});
 
 const schema = Joi.object({
   type: Joi.string().trim().valid('join', 'leave', 'kicked', 'banned').required()
@@ -224,15 +205,14 @@ function setDefaultValues(module) {
   }
 }
 
-function AnnouncementDialog(props) {
-  const { 
-    classes, 
-    announcementDialog, 
-    closeAnnouncementDialog, 
-    module, 
-    selectedBot, 
-    setSelectedBot, 
-    setApiAlert 
+export default function AnnouncementDialog(props) {
+  const {
+    announcementDialog,
+    closeAnnouncementDialog,
+    module,
+    selectedBot,
+    setSelectedBot,
+    setApiAlert
   } = props;
 
   const { register, handleSubmit, control, watch, setValue, reset, setError, trigger, formState: { errors } } = useForm({
@@ -399,84 +379,85 @@ function AnnouncementDialog(props) {
       open={announcementDialog}
       keepMounted={true}
     >
-      <div className={classes.categoryHeader}>
-        {module ? <span className={classes.edit}>Edit</span> : <span className={classes.new}>New</span>} Announcement
-      </div>
-      <form autoComplete="off" onSubmit={handleSubmit(onSubmit)} >
-        <ControlledSelect 
-          name="type"
-          description="Announcement type"
-          id="type"
-          label="Type"
-          labelId="type-select-label"
-          defaultValue=""
-          items={[
-            { value: "", name: "none" }, 
-            { value: "join", name: "join" }, 
-            { value: "leave", name: "leave" },
-            { value: "kicked", name: "kicked" },
-            { value: "banned", name: "banned"}
-          ]}
-          control={control}
-          error={errors}
-        />
-        <ChannelSelect
-          selectedBot={selectedBot}
-          setApiAlert={setApiAlert}
-          control={control}
-          name="responseChannel"
-          label="Channel"
-          description="Channel to post announcement"
-          error={errors}
-        />
-        <ControlledRadioGroup
-          control={control}
-          name="responseType"
-          description="Announcement Type"
-          defaultValue="basic"
-          error={errors}
-        >
-          <ControlledRadio
-            value="basic"
-            label="Basic"
+      <ContentPanelMin
+        headerPhase={module ? "Edit" : "New"}
+        header={'Announcement'}
+      >
+        <form autoComplete="off" onSubmit={handleSubmit(onSubmit)} >
+          <ControlledSelect
+            name="type"
+            description="Announcement type"
+            id="type"
+            label="Type"
+            labelId="type-select-label"
+            defaultValue=""
+            items={[
+              { value: "", name: "none" },
+              { value: "join", name: "join" },
+              { value: "leave", name: "leave" },
+              { value: "kicked", name: "kicked" },
+              { value: "banned", name: "banned" }
+            ]}
+            control={control}
+            error={errors}
           />
-          <ControlledRadio
-            value="embed"
-            label="Embed"
+          <ChannelSelect
+            selectedBot={selectedBot}
+            setApiAlert={setApiAlert}
+            control={control}
+            name="responseChannel"
+            label="Channel"
+            description="Channel to post announcement"
+            error={errors}
           />
-        </ControlledRadioGroup>
-        {returnResponseEditor()}
-        <ErrorText
-          error={errors.maxChar}
-          text="The combined character count of embed title, description, fields, and footer cannot exceed 5,500!"
-        />
-        <GridContainer justifyContent="flex-end">
-          <GridItem>
-            <Button
-              onClick={closeAnnouncementDialog}
-              variant="contained"
-              color="danger"
-            >
-              Cancel
-            </Button>
-          </GridItem>
-          <GridItem>
-            <Button
-              type="submit"
-              variant="contained"
-              color="teal"
-            >
-              Save
-            </Button>
-          </GridItem>
-        </GridContainer>
-      </form>
+          <ControlledRadioGroup
+            control={control}
+            name="responseType"
+            description="Announcement Type"
+            defaultValue="basic"
+            error={errors}
+          >
+            <ControlledRadio
+              value="basic"
+              label="Basic"
+            />
+            <ControlledRadio
+              value="embed"
+              label="Embed"
+            />
+          </ControlledRadioGroup>
+          {returnResponseEditor()}
+          <ErrorText
+            error={errors.maxChar}
+            text="The combined character count of embed title, description, fields, and footer cannot exceed 5,500!"
+          />
+          <GridContainer justifyContent="flex-end">
+            <GridItem>
+              <Button
+                onClick={closeAnnouncementDialog}
+                variant="contained"
+                color="danger"
+              >
+                Cancel
+              </Button>
+            </GridItem>
+            <GridItem>
+              <Button
+                type="submit"
+                variant="contained"
+                color="teal"
+              >
+                Save
+              </Button>
+            </GridItem>
+          </GridContainer>
+        </form>
+      </ContentPanelMin>
     </ResponsiveDialog>
   );
 }
 
 AnnouncementDialog.propTypes = {
-  classes: PropTypes.object.isRequired,
   announcementDialog: PropTypes.bool.isRequired,
   closeAnnouncementDialog: PropTypes.func.isRequired,
   module: PropTypes.object,
@@ -484,5 +465,3 @@ AnnouncementDialog.propTypes = {
   setSelectedBot: PropTypes.func.isRequired,
   setApiAlert: PropTypes.func.isRequired,
 };
-
-export default withStyles(styles)(AnnouncementDialog);
