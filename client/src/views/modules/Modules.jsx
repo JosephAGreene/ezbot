@@ -13,7 +13,7 @@ import moderationImage from '../../assets/images/moderation.png';
 import automoderatorImage from '../../assets/images/automoderator.png';
 import announcementsImage from '../../assets/images/announcements.png';
 
-function Modules() {
+export default function Modules() {
 
   return (
     <ContentWrapper>
@@ -47,5 +47,3 @@ function Modules() {
     </ContentWrapper>
   );
 }
-
-export default Modules;
