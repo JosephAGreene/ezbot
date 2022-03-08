@@ -16,7 +16,7 @@ import purgeImage from '../../assets/images/purge.png';
 import pingImage from '../../assets/images/ping.png';
 import helpImage from '../../assets/images/help.png';
 
-function Moderation(props) {
+export default function Moderation(props) {
   const { selectedBot } = props;
 
   return (
@@ -84,5 +84,3 @@ function Moderation(props) {
 Moderation.propTypes = {
   selectedBot: PropTypes.object.isRequired,
 };
-
-export default Moderation;
