@@ -199,6 +199,11 @@ function Navigator(props) {
 Navigator.propTypes = {
   classes: PropTypes.object.isRequired,
   routes: PropTypes.array.isRequired,
+  activePath: PropTypes.string,
+  activeSubDirectory: PropTypes.string,
+  selectedBot: PropTypes.object,
+  user: PropTypes.object,
+  handleLogoutDialogOpen: PropTypes.func,
 };
 
 export default withStyles(styles)(Navigator);
