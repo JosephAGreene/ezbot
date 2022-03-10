@@ -52,6 +52,7 @@ ContentPanelMin.propTypes = {
   classes: PropTypes.object.isRequired,
   headerPhase: PropTypes.string,
   header: PropTypes.string,
+  children: PropTypes.node,
 };
 
 export default withStyles(styles)(ContentPanelMin);
