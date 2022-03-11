@@ -8,7 +8,6 @@ import Container from '@material-ui/core/Container';
 
 // Import custom components
 import Button from '../../components/buttons/Button';
-import Typography from '../../components/Typography';
 
 const styles = (theme) => ({
   root: {
@@ -61,9 +60,6 @@ const styles = (theme) => ({
       marginTop: theme.spacing(10),
     },
   },
-  more: {
-    marginTop: theme.spacing(2),
-  },
 });
 
 function Splash(props) {
@@ -73,7 +69,6 @@ function Splash(props) {
 
   return (
     <>
-
     <section className={classes.root}>
       <Container className={classes.container}>
         <Button
@@ -86,9 +81,7 @@ function Splash(props) {
         >
           Login With Discord
         </Button>
-        <Typography variant="body2" color="inherit" className={classes.more}>
           Build your own bot
-        </Typography>
         <div className={classes.backdrop} />
         <div className={classes.background} />
       </Container>
