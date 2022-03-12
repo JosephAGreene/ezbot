@@ -47,7 +47,7 @@ const routes = [
     name: 'Documentation',
     path: "stash",
     children: [
-      { path: 'stash/documentation/gettingstarted', name: 'Getting Started', icon: <FaBookReader />, component: GettingStarted },
+      { path: 'documentation/gettingstarted', name: 'Getting Started', icon: <FaBookReader />, component: GettingStarted },
     ],
   },
   {
