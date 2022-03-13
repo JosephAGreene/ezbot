@@ -27,8 +27,8 @@ let theme = createMuiTheme({
     },
     gray: {
       light: '#282c34',
-      main: '#23272e',
-      dark: '#171a1f',
+      main: '#171a1f',
+      dark: '#111518',
       disabled: '#65686d',
     },
     green: {
