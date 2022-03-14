@@ -65,10 +65,6 @@ const styles = (theme) => ({
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2),
   },
-  firebase: {
-    fontSize: 24,
-    color: theme.palette.common.white,
-  },
   itemActiveItem: {
     color: theme.palette.purple.main,
   },
@@ -103,7 +99,7 @@ function Navigator(props) {
   return (
     <Drawer variant="permanent" onClick={other.onClose} {...other}>
       <List disablePadding>
-        <ListItem className={clsx(classes.firebase, classes.psuedoItem, classes.itemCategory)}>
+        <ListItem className={clsx(classes.psuedoItem, classes.itemCategory)}>
           {(!isEmptyObject(selectedBot) && activeSubDirectory === 'develop') 
             ? <Title 
                 iconComponent={GoBeaker}
