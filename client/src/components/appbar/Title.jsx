@@ -17,6 +17,7 @@ const styles = (theme) => ({
   title: {
     fontSize: 30,
     marginTop: theme.spacing(1),
+    marginBottom: theme.spacing(1),
   },
   icon: {
     marginRight: theme.spacing(1),
