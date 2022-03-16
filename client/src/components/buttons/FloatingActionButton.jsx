@@ -26,10 +26,10 @@ const styles = (theme) => ({
 });
 
 function FloatingActionButton(props) {
-  const {classes, onClick, children} = props;
+  const {classes, disabled, onClick, children} = props;
 
   return (
-    <Fab className={classes.fabButton} onClick={onClick}>
+    <Fab disabled={disabled} className={classes.fabButton} onClick={onClick}>
       {children}
     </Fab>
   );
@@ -38,6 +38,7 @@ function FloatingActionButton(props) {
 FloatingActionButton.propTypes = {
   classes: PropTypes.object.isRequired,
   onClick: PropTypes.func,
+  disabled: PropTypes.bool,
   children: PropTypes.node,
 };
 
