@@ -33,7 +33,7 @@ function Header(props) {
   return (
     <AppBar
       fixed
-      color="grayMain"
+      color="grayDark"
       shadow
     >
       <Hidden mdUp>
