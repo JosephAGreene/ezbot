@@ -27,6 +27,10 @@ import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import defaultDiscord from '../../assets/images/defaultDiscord.png';
 
 const styles = (theme) => ({
+  titleHeader: {
+    paddingTop: theme.spacing(1.5),
+    paddingBottom: theme.spacing(1.5),
+  },
   categoryHeader: {
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2),
@@ -99,7 +103,7 @@ function Navigator(props) {
   return (
     <Drawer variant="permanent" onClick={other.onClose} {...other}>
       <List disablePadding>
-        <ListItem className={clsx(classes.psuedoItem, classes.itemCategory)}>
+        <ListItem className={classes.titleHeader}>
           {(!isEmptyObject(selectedBot) && activeSubDirectory === 'develop') 
             ? <Title 
                 iconComponent={GoBeaker}
