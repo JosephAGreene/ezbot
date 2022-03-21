@@ -13,7 +13,7 @@ import ContentPanel from '../panels/ContentPanel';
 import TitlePanel from '../panels/TitlePanel';
 import GridContainer from '../../components/grid/GridContainer';
 import GridItem from '../../components/grid/GridItem';
-import YoutubeEmbed from '../../components/YoutubeEmbed';
+import YoutubeEmbed from '../../components/info/YoutubeEmbed';
 import InfoCardStandard from '../../components/info/InfoCardStandard';
 import InfoCardExpand from '../../components/info/InfoCardExpand';
 
