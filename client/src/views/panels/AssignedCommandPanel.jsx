@@ -35,6 +35,7 @@ const styles = (theme) => ({
     padding: "20px",
     marginBottom: theme.spacing(3),
     backgroundColor: theme.palette.gray.main,
+    borderRadius: theme.spacing(.5)
   },
   command: {
     fontSize: 18,

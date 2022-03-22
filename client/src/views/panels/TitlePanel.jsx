@@ -28,6 +28,7 @@ const styles = (theme) => ({
     backgroundColor: theme.palette.gray.main,
     overflow: "hidden",
     color: theme.palette.white.main,
+    borderRadius: theme.spacing(.5),
   },
   avatar: {
     width: theme.spacing(9),

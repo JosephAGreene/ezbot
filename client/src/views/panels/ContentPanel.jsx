@@ -12,6 +12,7 @@ const styles = (theme) => ({
     backgroundColor: theme.palette.gray.main,
     overflow: "hidden",
     color: theme.palette.white.main,
+    borderRadius: theme.spacing(.5),
   },
   header: {
     marginTop: theme.spacing(6),
