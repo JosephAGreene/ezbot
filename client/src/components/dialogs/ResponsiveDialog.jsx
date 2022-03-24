@@ -10,8 +10,8 @@ const styles = (theme) => ({
   dialogRoot: {
     '& .MuiDialog-paperFullWidth': {
       maxWidth: "1150px",
-      width: "calc(80% - 64px)",
-      margin: "75px 0 75px 255px",
+      width: "calc(80% - 62px)",
+      margin: "75px 0 75px 250px",
       backgroundColor: theme.palette.gray.main,
       color: theme.palette.white.main,
       [theme.breakpoints.down('sm')]: {
