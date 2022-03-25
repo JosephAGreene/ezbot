@@ -15,7 +15,7 @@ const styles = (theme) => ({
       backgroundColor: theme.palette.gray.main,
       color: theme.palette.white.main,
       [theme.breakpoints.down('sm')]: {
-        margin: "75px 0 75px 0",
+        margin: "75px 10px 75px 0",
         width: "90%",
       },
     },
@@ -27,7 +27,7 @@ function ResponsiveDialog(props) {
 
   return (
     <Dialog
-      maxWidth={false}
+      maxWidth={true}
       fullWidth={true}
       className={classes.dialogRoot}
       open={open}
