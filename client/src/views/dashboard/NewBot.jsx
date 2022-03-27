@@ -52,7 +52,14 @@ function NewBot(props) {
   const { register, handleSubmit, control, setError, formState: { errors } } = useForm({
     resolver: joiResolver(
       Joi.object({
-        prefix: Joi.string().trim().regex(RegExp(/[!@#$%^&*_\-=+.~]/)).max(4).required()
+        prefix: Joi.string().trim().regex(RegExp(/[!@#$%^&*_\-=+.~:]/)).max(4).required()
+        .custom((value, helper) => {
+          const wordCount = value.slice(0).trim().split(' ').length;
+          if (wordCount > 1) {
+            return helper.message('Prefix cannot contain spaces');
+          }
+          return value;
+        })
           .messages({
             "string.pattern.base": "Prefix must start with a special character",
             "string.empty": 'Prefix is required',
