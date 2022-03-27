@@ -23,6 +23,9 @@ import Button from '../../components/buttons/Button';
 import GridContainer from '../../components/grid/GridContainer';
 import GridItem from '../../components/grid/GridItem';
 
+// Import documents
+import {BotTokenDoc} from '../documents/NewBot';
+
 // Import images
 import newBotImage from '../../assets/images/newbot.png';
 
@@ -49,8 +52,9 @@ function NewBot(props) {
   const { register, handleSubmit, control, setError, formState: { errors } } = useForm({
     resolver: joiResolver(
       Joi.object({
-        prefix: Joi.string().trim().max(4).required()
+        prefix: Joi.string().trim().regex(RegExp(/[!@#$%^&*_\-=+.~]/)).max(4).required()
           .messages({
+            "string.pattern.base": "Prefix must start with a special character",
             "string.empty": 'Prefix is required',
             "string.max": 'Prefix cannot be greater than 4 characters',
             "any.required": 'Prefix is required',
@@ -127,6 +131,7 @@ function NewBot(props) {
           "Generate a bot token through the Discord Developer Portal",
         ]}
         image={newBotImage}
+        docs={[<BotTokenDoc />]}
       />
       <ContentPanel>
         <form autoComplete="off" onSubmit={handleSubmit(onSubmit)} >
