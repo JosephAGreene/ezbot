@@ -27,7 +27,7 @@ function ResponsiveDialog(props) {
 
   return (
     <Dialog
-      maxWidth={true}
+      maxWidth={false}
       fullWidth={true}
       className={classes.dialogRoot}
       open={open}
