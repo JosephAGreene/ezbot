@@ -13,6 +13,7 @@ const styles = (theme) => ({
       width: "calc(80% - 62px)",
       margin: "75px 0 75px 250px",
       backgroundColor: theme.palette.gray.main,
+      borderRadius: theme.spacing(.5),
       color: theme.palette.white.main,
       [theme.breakpoints.down('sm')]: {
         margin: "75px 10px 75px 0",
