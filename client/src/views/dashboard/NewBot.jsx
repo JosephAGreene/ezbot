@@ -24,7 +24,7 @@ import GridContainer from '../../components/grid/GridContainer';
 import GridItem from '../../components/grid/GridItem';
 
 // Import documents
-import {BotTokenDoc} from '../documents/NewBot';
+import {BotPrefix, BotTokenDoc} from '../documents/NewBot';
 
 // Import images
 import newBotImage from '../../assets/images/newbot.png';
@@ -138,7 +138,7 @@ function NewBot(props) {
           "Generate a bot token through the Discord Developer Portal",
         ]}
         image={newBotImage}
-        docs={[<BotTokenDoc />]}
+        docs={[<BotPrefix />, <BotTokenDoc />]}
       />
       <ContentPanel>
         <form autoComplete="off" onSubmit={handleSubmit(onSubmit)} >
