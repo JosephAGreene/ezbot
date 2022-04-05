@@ -3,31 +3,9 @@ import React from 'react';
 // Import MUI components
 import { makeStyles } from '@material-ui/core/styles';
 
-const styles = makeStyles((theme) => ({
-  mainHeading: {
-    fontSize: 28,
-    color: theme.palette.white.main,
-    marginBottom: theme.spacing(1),
-    [theme.breakpoints.up('md')]: {
-      padding: "0 25px",
-    },
-  },
-  subHeading: {
-    fontSize: 22,
-    color: theme.palette.white.main,
-    marginBottom: theme.spacing(1),
-    [theme.breakpoints.up('md')]: {
-      padding: "0 25px",
-    },
-  },
-  textContent: {
-    color: theme.palette.white.dark,
-    marginBottom: theme.spacing(3),
-    [theme.breakpoints.up('md')]: {
-      padding: "0 35px",
-    },
-  }, 
-}));
+import documentStyles from '../../jss/documents';
+
+const styles = makeStyles(documentStyles); 
 
 export function BotPrefix() {
   const classes = styles();
@@ -49,7 +27,7 @@ export function BotPrefix() {
           </li>
           <li>
             Must start with a special character or symbol <br />
-            <b>i.e.</b> (~ ! @ # $ % ^ & * _ - + = : .)
+            <b>i.e.</b> <span className={classes.greenText}>~ ! @ # $ % ^ & * _ - + = : .</span>
           </li>
           <li>
             Forward slash is a reserved discord character, so it's not allowed here.
