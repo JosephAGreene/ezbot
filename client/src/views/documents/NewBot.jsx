@@ -11,7 +11,7 @@ export function BotPrefix() {
   const classes = styles();
 
   return (
-    <div>
+    <div className={classes.wrapper}>
       <div className={classes.mainHeading}>Bot Prefix</div>
       <div className={classes.textContent}>
         The bot prefix is a short 1-4 character identifer that is required in conjuction with any bot command execution. 

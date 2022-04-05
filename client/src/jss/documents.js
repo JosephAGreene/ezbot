@@ -1,4 +1,7 @@
 const documentStyles = (theme) => ({
+  wrapper: {
+    paddingBottom: theme.spacing(4),
+  },
   mainHeading: {
     fontSize: 28,
     color: theme.palette.white.main,
