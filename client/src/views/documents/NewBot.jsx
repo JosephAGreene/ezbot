@@ -45,7 +45,7 @@ export function BotTokenDoc() {
   const classes = styles();
 
   return (
-    <div>
+    <div clssName={classes.wrapper}>
       <div className={classes.mainHeading}>Getting a token</div>
       <div className={classes.textContent}>
         Bot tokens are obtained by creating an "application" on your discord developer profile.
