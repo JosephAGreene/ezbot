@@ -24,7 +24,7 @@ const styles = (theme) => ({
 });
 
 function ResponsiveDialog(props) {
-  const { classes, open, keepMounted, children } = props;
+  const { classes, open, scroll, keepMounted, children } = props;
 
   return (
     <Dialog
@@ -33,7 +33,7 @@ function ResponsiveDialog(props) {
       className={classes.dialogRoot}
       open={open}
       aria-labelledby="dialog"
-      scroll="body"
+      scroll={scroll ? "paper" : "body"} 
       keepMounted={keepMounted}
     >
       <DialogContent>
@@ -46,6 +46,7 @@ function ResponsiveDialog(props) {
 ResponsiveDialog.propTypes = {
   classes: PropTypes.object.isRequired,
   open: PropTypes.bool.isRequired,
+  scroll: PropTypes.bool,
   keepMounted: PropTypes.bool.isRequired,
   children: PropTypes.node,
 };
