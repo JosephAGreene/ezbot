@@ -99,6 +99,14 @@ theme = {
           backgroundColor: "#dfdfdf",
           borderRadius: "10px",
         },
+        a: {
+          color: theme.palette.teal.main,
+          textDecoration: "none",
+          '&:hover': {
+            color: theme.palette.teal.light,
+            textDecoration: "underline",
+          },
+        },
       },
     },
     MuiPaper: {

@@ -28,14 +28,6 @@ const documentStyles = (theme) => ({
   greenText: {
     color: theme.palette.green.main,
   }, 
-  link: {
-    color: theme.palette.teal.main,
-    textDecoration: "none",
-    '&:hover': {
-      color: theme.palette.teal.light,
-      textDecoration: "underline",
-    },
-  }
 });
 
 export default documentStyles;
