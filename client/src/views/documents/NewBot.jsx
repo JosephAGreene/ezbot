@@ -45,14 +45,14 @@ export function BotTokenDoc() {
   const classes = styles();
 
   return (
-    <div clssName={classes.wrapper}>
+    <div className={classes.wrapper}>
       <div className={classes.mainHeading}>Getting a token</div>
       <div className={classes.textContent}>
         Bot tokens are obtained by creating an "application" on your discord developer profile.
       </div>
       <div className={classes.subHeading}>Create an Application</div>
       <div className={classes.textContent}>
-        Visit https://discordapp.com/developers/applications and create an account if you do not already have one.
+        Visit <a target="_blank" href="https://discordapp.com/developers/applications">https://discordapp.com/developers/applications</a> and create an account if you do not already have one.
         Click the <b>New Application</b> button to create a new application. Give the application any name you want.
       </div>
     </div>
