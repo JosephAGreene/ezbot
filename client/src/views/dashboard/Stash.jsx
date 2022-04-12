@@ -71,7 +71,7 @@ function Stash(props) {
 
     getBotSummary();
 
-    // cleanup function
+    //cleanup function
     return () => {
       mounted = false;
     }
@@ -114,7 +114,7 @@ function Stash(props) {
       return (
         <Redirect
           to={{
-            pathname: "documentation/gettingstarted",
+            pathname: "/dashboard/documentation/gettingstarted",
             newUser: true,
           }}
         />
