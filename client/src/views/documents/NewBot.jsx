@@ -17,6 +17,7 @@ export function BotPrefix() {
         The bot prefix is a short 1-4 character identifer that is required in conjuction with any bot command execution. 
         More specifically, your bot uses the prefix to confirm that you are trying to interact with it. 
       </div>
+
       <div className={classes.subHeading}>
         Prefix rules
       </div>
@@ -52,7 +53,7 @@ export function BotTokenDoc() {
       </div>
       <div className={classes.subHeading}>Create an Application</div>
       <div className={classes.textContent}>
-        Visit <a target="_blank" href="https://discordapp.com/developers/applications">https://discordapp.com/developers/applications</a> and create an account if you do not already have one.
+        Visit <a className={classes.link} target="_blank" href="https://discordapp.com/developers/applications">https://discordapp.com/developers/applications</a> and create an account if you do not already have one.
         Click the <b>New Application</b> button to create a new application. Give the application any name you want.
       </div>
     </div>
